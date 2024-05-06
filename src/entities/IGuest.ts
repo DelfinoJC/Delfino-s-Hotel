@@ -2,7 +2,7 @@ import { IBooking } from "./IBookins"
 
 export interface IGuest {
     name: string,
-    CPF: number,
+    CPF: string,
     phoneNumber: number,
     email: string,
     password: string,
@@ -11,7 +11,7 @@ export interface IGuest {
 
 export interface IGuestDTO {
     name: string,
-    CPF: number,
+    CPF: string,
     phoneNumber: number,
     email: string,
     password: string

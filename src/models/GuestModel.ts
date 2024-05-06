@@ -1,14 +1,15 @@
-import mongoose from "mongoose";
+import { mongoose } from "../database/connectionDatabase";
 import { IGuest } from "../entities/IGuest";
 
 const guestSchema = new mongoose.Schema<IGuest>({
   name: {
-    types: String,
+    type: String,
     required: true,
   },
 
   email: {
     type: String,
+    unique: true,
     required: true,
   },
   password: {
@@ -17,7 +18,7 @@ const guestSchema = new mongoose.Schema<IGuest>({
   },
 
   CPF: {
-    type: Number,
+    type: String,
     required: true,
   },
 

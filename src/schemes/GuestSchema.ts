@@ -4,7 +4,7 @@ import { IGuestDTO, IGuestLogin } from "../entities/IGuest";
 
 export const guestSchemaValidate = yup.object<IGuestDTO>({
   name: yup.string().required("Name required"),
-  CPF: yup.number().required("CPF required"),
+  CPF: yup.string().required("CPF required"),
   phoneNumber: yup.number(),
   email: yup.string().email("Email invalidate").required("Email is required"),
   password: yup.string().required().min(8, "Password required"),
