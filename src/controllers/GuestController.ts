@@ -13,8 +13,7 @@ export async function createGuest(req: Request, res: Response) {
         res.status(StatusCode.CREATE).json({ newGuest })
     }
     catch(error){
-        res.status(StatusCode.BAD_REQUEST).json({ error })
-        console.log(error)
+        res.status(StatusCode.BAD_REQUEST).send({ message: error.message })
     }
 }
 
@@ -23,6 +22,6 @@ export async function findAllGuest(req: Request, res: Response){
         const guests = await service.findAllGuest()
         res.status(StatusCode.OK).json({ guests })
     } catch (error) {
-        res.status(StatusCode.BAD_REQUEST).json({ messege: error.messege })
+        res.status(StatusCode.BAD_REQUEST).json({ messed: error.messed })
     }
 }
