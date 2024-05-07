@@ -1,15 +1,14 @@
 import { Router } from 'express'
 import * as GuestSchema from '../schemes/GuestSchema'
 import validateRouter from '../middleware/validateMiddleware'
-import { createGuest, findAllGuest } from '../controllers/GuestController'
+import { createGuest, findAllGuest, loggerGuest } from '../controllers/GuestController'
 
 
 const router = Router()
 
 router.post('/', validateRouter(GuestSchema.CreateGuest.schema), createGuest)
+router.post('/login', validateRouter(GuestSchema.LoggerGuest.schema), loggerGuest)
 router.get('/', findAllGuest)
-
-
 
 
 

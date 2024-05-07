@@ -1,8 +1,11 @@
-import { IGuest, IGuestDTO } from "../entities/IGuest";
+import { IGuest, IGuestDTO, IGuestLogin, IGuestTOKEN } from "../entities/IGuest";
 import { Crypto } from "../provider/cryptograph";
+import { Token } from '../provider/createToken'
 import { GuestRepository } from "../repositories/GuestRepository";
+import { mongoose } from "../database/connectionDatabase";
 
 const crypto = new Crypto();
+const token = new Token()
 
 export class GuestService {
   private repository: GuestRepository;
@@ -26,6 +29,24 @@ export class GuestService {
     };
 
     return await this.repository.create(newGuest);
+  }
+
+  async logger(data: IGuestLogin): Promise<IGuestTOKEN>{
+    const { email, password } = data
+
+    const guest = await this.repository.findByEmail( email )
+    if(!guest){
+      throw new Error(`Incorrect password or email`)
+    }
+
+    const comparesWhetherPasswordsAreTheSame = await crypto.comperePassword(password, guest.password)
+    if (!comparesWhetherPasswordsAreTheSame) {
+      throw new Error(`Incorrect password or email`)
+    }
+
+    const tokenCreated = token.tokenJWT(guest.name)
+
+    return { token: tokenCreated }
   }
 
   async findAllGuest() {

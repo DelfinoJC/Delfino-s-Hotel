@@ -13,7 +13,17 @@ export async function createGuest(req: Request, res: Response) {
         res.status(StatusCode.CREATE).json({ newGuest })
     }
     catch(error){
-        res.status(StatusCode.BAD_REQUEST).send({ message: error.message })
+        res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
+    }
+}
+
+export async function loggerGuest(req: Request, res: Response) {
+    try{
+        const token = await service.logger(req.body)
+        res.status(StatusCode.CREATE).json( { token } )
+    }
+    catch(error){
+        res.status(StatusCode.BAD_REQUEST).json( { message: error.message } )
     }
 }
 
