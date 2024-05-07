@@ -1,4 +1,4 @@
-import { IBooking } from "./IBookins"
+import { IBooking } from "./IBookings"
 
 export interface IGuest {
     name: string,
@@ -20,4 +20,8 @@ export interface IGuestDTO {
 export interface IGuestLogin {
     email: string,
     password: string
+}
+
+export interface IGuestTOKEN {
+    token: string
 }

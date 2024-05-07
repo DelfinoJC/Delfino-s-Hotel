@@ -1,9 +1,9 @@
 import * as yup from "yup";
-import { IBooking } from "../entities/IBookins";
+import { IBooking } from "../entities/IBookings";
 import { TypedRequest } from "../utils/typedRequest";
 
 export const bookingSchemaValidate = yup.object<IBooking>({
-  checkinDate: yup.number().required(),
+  checkInDate: yup.number().required(),
   checkoutDate: yup.number().required(),
   gests: yup.number().required(),
   idOfRoom: yup.string().required(),
