@@ -1,35 +1,34 @@
-import { IGuestDTO } from "../entities/IGuest";
-import { Crypto } from '../provider/criptografy'
+import { IGuest, IGuestDTO } from "../entities/IGuest";
+import { Crypto } from "../provider/cryptograph";
 import { GuestRepository } from "../repositories/GuestRepository";
 
-const cripto = new Crypto()
+const crypto = new Crypto();
 
 export class GuestService {
+  private repository: GuestRepository;
 
-    private repository: GuestRepository
-    
-    constructor(repo: GuestRepository){
-        this.repository = repo
+  constructor(repo: GuestRepository) {
+    this.repository = repo;
+  }
+
+  async createGuest(data: IGuestDTO) {
+    const guestExistWithEmail = await this.repository.findByEmail(data.email);
+
+    if (guestExistWithEmail) {
+      throw new Error(`This email has already been registered`);
     }
 
-    async createGuest(data: IGuestDTO){
-        const guestExistWhithEmail = await this.repository.findByEmail(data.email)
+    const encryptedPassword = await crypto.cryptoPassword(data.password);
 
-        if(guestExistWhithEmail){
-            throw new Error(`This email has already been registered`)
-        }
+    const newGuest: IGuestDTO = {
+      ...data,
+      password: encryptedPassword,
+    };
 
-        const encryptedPassword = await cripto.cryptoPassword(data.password)
+    return await this.repository.create(newGuest);
+  }
 
-        const newGuest: IGuestDTO = {
-            ...data,
-            password: encryptedPassword
-        }
-        
-         return await this.repository.create(newGuest)
-    }
-
-    async findAllGuest(){
-        return await this.repository.findAllGuest()
-    }
+  async findAllGuest() {
+    return await this.repository.findAllGuest();
+  }
 }
