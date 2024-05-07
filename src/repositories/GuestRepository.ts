@@ -11,7 +11,7 @@ export class GuestRepository {
 
     async findByEmail(email: string){
         const guest = await this.database.findOne({email})
-        return guest
+        return !!guest
     }
 
     async create(data: IGuestDTO): Promise<IGuest> {
