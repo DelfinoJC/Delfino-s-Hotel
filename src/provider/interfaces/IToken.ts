@@ -1,5 +1,5 @@
 export interface ITokenProvider {
-    tokenJWT: (id: string) => string
+    tokenJWT: (id: string, youAre: boolean ,auth: string) => string
   
     verifyJWT: (
       token: string,
