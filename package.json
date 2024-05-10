@@ -4,7 +4,8 @@
   "description": "This is a hotel booking app. ",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd --respawn src/app.ts"
+    "dev": "tsnd --respawn src/app.ts",
+    "seed:admin": "tsnd src/seeds/admin.ts"
   },
   "keywords": [],
   "author": "José Carlos da Silva Delfino",
