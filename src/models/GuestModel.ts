@@ -6,7 +6,6 @@ const guestSchema = new mongoose.Schema<IGuest>({
     type: String,
     required: true,
   },
-
   email: {
     type: String,
     unique: true,
@@ -31,7 +30,7 @@ const guestSchema = new mongoose.Schema<IGuest>({
       type: mongoose.Types.ObjectId,
       ref: "Bookings",
     },
-  ],
+  ]
 });
 
 export const GuestModel = mongoose.model("Guests", guestSchema)

@@ -1,8 +1,8 @@
 import mongoose  from "mongoose";
-import { IBookinkg } from "../entities/IBookins";
+import { IBooking } from "../entities/IBookings";
 
-const bookingSchema = new mongoose.Schema<IBookinkg>({
-  checkinDate: {
+const bookingSchema = new mongoose.Schema<IBooking>({
+  checkInDate: {
     type: Date,
     required: true,
   },
