@@ -12,7 +12,7 @@ export default (schema: any) =>
         },
         { strict: true, abortEarly: false }
       )
-      console.log(`ERROR: ${schema}`)
+      console.log(`REQUEST: ${schema}`)
 
       next()
     } catch (error) {
