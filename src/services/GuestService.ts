@@ -1,8 +1,8 @@
 import { IGuest, IGuestDTO, IGuestLogin, IGuestTOKEN } from "../entities/IGuest";
 import { Crypto } from "../provider/cryptograph";
+import { authGuest } from '../configs/authGuestConfig'
 import { Token } from '../provider/createToken'
 import { GuestRepository } from "../repositories/GuestRepository";
-import { mongoose } from "../database/connectionDatabase";
 
 const crypto = new Crypto();
 const token = new Token()
@@ -15,8 +15,8 @@ export class GuestService {
   }
 
   async createGuest(data: IGuestDTO) {
-    const guestExistWithEmail = await this.repository.findByEmail(data.email);
 
+    const guestExistWithEmail = await this.repository.findByEmail(data.email);
     if (guestExistWithEmail) {
       throw new Error(`This email has already been registered`);
     }
@@ -44,7 +44,7 @@ export class GuestService {
       throw new Error(`Incorrect password or email`)
     }
 
-    const tokenCreated = token.tokenJWT(guest.name)
+    const tokenCreated = token.tokenJWT(guest._id.toString(), false, authGuest.secret)
 
     return { token: tokenCreated }
   }
