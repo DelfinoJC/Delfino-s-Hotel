@@ -13,14 +13,15 @@ export class GuestRepository {
         const guest = await this.database.findOne({email})
         return guest
     }
+    
+    async findAllGuest(){
+        const allUsers = await this.database.find()
+        return allUsers
+    }
 
     async create(data: IGuestDTO): Promise<IGuest> {
         const save = await this.database.create(data)
         return save
     }
-
-    async findAllGuest(){
-        const allUsers = await this.database.find()
-        return allUsers
-    }
+    
 }
