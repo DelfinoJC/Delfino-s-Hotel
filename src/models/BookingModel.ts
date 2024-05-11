@@ -1,4 +1,4 @@
-import mongoose  from "mongoose";
+import mongoose from "mongoose";
 import { IBooking } from "../entities/IBookings";
 
 const bookingSchema = new mongoose.Schema<IBooking>({
@@ -37,4 +37,4 @@ const bookingSchema = new mongoose.Schema<IBooking>({
   },
 });
 
-export const BookingModel = mongoose.model("Bookings", bookingSchema)
+export const BookingModel = mongoose.model("Bookings", bookingSchema);

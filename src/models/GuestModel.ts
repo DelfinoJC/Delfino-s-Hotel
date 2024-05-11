@@ -1,5 +1,5 @@
-import { mongoose } from "../database/connectionDatabase";
 import { IGuest } from "../entities/IGuest";
+import { mongoose } from "../database/connectionDatabase";
 
 const guestSchema = new mongoose.Schema<IGuest>({
   name: {
@@ -30,7 +30,7 @@ const guestSchema = new mongoose.Schema<IGuest>({
       type: mongoose.Types.ObjectId,
       ref: "Bookings",
     },
-  ]
+  ],
 });
 
-export const GuestModel = mongoose.model("Guests", guestSchema)
+export const GuestModel = mongoose.model("Guests", guestSchema);
