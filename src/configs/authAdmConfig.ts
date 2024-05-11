@@ -1,5 +1,5 @@
-import 'dotenv/config'
+import "dotenv/config";
 
 export const authAdm = {
-    secret: process.env.PASSANT_ADM as string
-}
+  secret: process.env.PASSANT_ADM as string,
+};

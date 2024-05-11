@@ -1,5 +1,5 @@
-import 'dotenv/config'
+import "dotenv/config";
 
 export const authGuest = {
-    secret: process.env.PASSANT as string
-}
+  secret: process.env.PASSANT as string,
+};
