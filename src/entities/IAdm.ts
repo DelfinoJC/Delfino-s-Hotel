@@ -8,5 +8,5 @@ export interface IAdm {
 }
 
 export interface IAdmTOKEN {
-  token: string
+  token: string;
 }

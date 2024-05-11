@@ -1,6 +1,9 @@
+import mongoose from "mongoose"
+
 export interface IRoom {
+    _id: mongoose.Types.ObjectId
     numberOfRoom: number,
-    type: "individual" | "double" | "suite",
+    type: "queen" | "king" | "twin" | "deluxe" | "executive" | "presidential",
     guestCapacity: number,
     dailyRate: number,
     photo: string,
