@@ -1,5 +1,5 @@
-import * as yup from 'yup'
-import { type NextFunction, type Request, type Response } from 'express'
+import * as yup from "yup";
+import { type NextFunction, type Request, type Response } from "express";
 
 export default (schema: any) =>
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -11,12 +11,12 @@ export default (schema: any) =>
           params: req.params,
         },
         { strict: true, abortEarly: false }
-      )
-      console.log(`REQUEST: ${schema}`)
+      );
+      console.log(`REQUEST: ${schema}`);
 
-      next()
+      next();
     } catch (error) {
-      const { name, message, errors } = error as yup.ValidationError
-      res.status(406).send({ name, message, errors })
+      const { name, message, errors } = error as yup.ValidationError;
+      res.status(406).send({ name, message, errors });
     }
-  }
+  };
