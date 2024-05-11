@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
-import { databaseConfig } from '../configs/databaseConfig'
+import mongoose from "mongoose";
+import { databaseConfig } from "../configs/databaseConfig";
 
-mongoose.connect(databaseConfig.uri)
+mongoose.connect(databaseConfig.uri);
 
-export { mongoose }
+export { mongoose };
