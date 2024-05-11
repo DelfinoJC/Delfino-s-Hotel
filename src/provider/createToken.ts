@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken'
 import 'dotenv/config'
+import jwt from 'jsonwebtoken'
 import { ITokenProvider } from './interfaces/IToken'
 
 export class Token implements ITokenProvider {

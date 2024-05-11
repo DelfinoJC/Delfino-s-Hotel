@@ -1,5 +1,5 @@
-import { hash, compare } from 'bcrypt'
 import 'dotenv/config'
+import { hash, compare } from 'bcrypt'
 import { ICryptoProvider } from './interfaces/ICrypto'
 
 export class Crypto implements ICryptoProvider {
