@@ -1,9 +1,14 @@
-import { Router } from 'express'
-import validateRouter from '../middleware/validateMiddleware'
-import * as AdmSchema from '../schemes/AdminSchema'
+import { Router } from "express";
+import validateRouter from "../middleware/validateMiddleware";
+import * as AdmSchema from "../schemes/AdminSchema";
+import { loggerAdmController } from "../controllers/AdmController";
 
-const router = Router()
+const router = Router();
 
-router.post('/auth')
+router.post(
+  "/auth",
+  validateRouter(AdmSchema.AdmLogger.schema),
+  loggerAdmController
+);
 
-export default router
+export default router;

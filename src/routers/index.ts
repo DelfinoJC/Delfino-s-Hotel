@@ -1,10 +1,10 @@
-import { Router } from 'express'
-import GuestRouters from '../routers/GuestRouter'
-import AdminRouters from '../routers/AdminRouter'
+import { Router } from "express";
+import GuestRouters from "../routers/GuestRouter";
+import AdminRouters from "../routers/AdminRouter";
 
-const routers = Router()
+const routers = Router();
 
-routers.use('/guest', GuestRouters)
-routers.use('/adm', AdminRouters)
+routers.use("/guest", GuestRouters);
+routers.use("/adm", AdminRouters);
 
-export default routers
+export default routers;
