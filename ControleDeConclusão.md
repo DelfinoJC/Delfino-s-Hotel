@@ -51,17 +51,42 @@ Sprint inicial
          [ X ] - Comparar senhas criptografada com senha da requisição
          [ X ] - Utilizar JWT (Provider de Token)
          [ X ] - Como diferenciar um token de hóspede de um token de gerente? 🤔
-         
- [ - ] 3. Login de Gerente - POST /admin/auth
+
+ [ X ] 3. **Login de Gerente - POST /admin/auth**
          [ X ] Cadastrar um gerente no banco de dados
-         - Vale a pena ter dois middleware diferentes pra algo tão parecido??? não. 🤔
+         [ X ] Vale a pena ter dois middleware diferentes pra algo tão parecido??? não. 🤔
+
 ```
 
+## Sprint 02 (De 10 a 16/05)
 
-2. Citar o que faltou para completar itens iniciados
-        - Testar se está funcionando
+[ - ] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
+
+   [ - ] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
+        **tipos de quartos:**
+        
+                Quarto Queen: um quarto de hotel com uma cama de casal, sendo a cama de tamanho padrão.
+                Quarto King: um quarto de hotel com uma cama de tamanho king-size.
+                Quarto Twin: um quarto que contém duas camas de solteiro, mas apenas um hóspede ocupa.
+
+   [ ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+
+[ ] 5. **Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)**
+
+   [ ] - Rota para alterar o status do quarto entre: "disponível", "ocupado", "em manutenção"
+   [ ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+
+[ ] 6. **Listar Todos os Quartos disponíveis**
+
+   [ ] - Deve listar os quartos com status "disponível"
+
+[ ] 7. **Listar Todos os Quartos disponíveis por data**
+   [ ] - Deve listar os quartos com status "disponível".
+   [ ] - Deve listar apenas os quartos que não possuirem reserva "confirmada" ou "em andamento" na data especificada.
 
 
-3. Entender os itens que não foram iniciados
-        - Estava ajudando os colegas a pelo menos iniciar o projeto;
-        - Talvez um pouco organização
+# OBSERVAÇÕES DA PRIMEIRA SEMANA
+
+2. Citar o que faltou para completar itens iniciados - Testar se está funcionando
+
+3. Entender os itens que não foram iniciados - Estava ajudando os colegas a pelo menos iniciar o projeto; - Talvez um pouco organização
