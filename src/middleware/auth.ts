@@ -33,7 +33,7 @@ export default (isAdm: boolean) =>
 
     if (isAdm) {
       const checkAdm = providerToken.verifyJWT(token, authAdm.secret);
-      if (checkAdm) {
+      if (checkAdm.success) {
         return next();
       }
       return res
