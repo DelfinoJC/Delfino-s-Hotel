@@ -4,12 +4,15 @@
   "description": "This is a hotel booking app. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsnd --respawn src/app.ts",
+    "seed:admin": "tsnd src/seeds/admin.ts"
   },
   "keywords": [],
   "author": "José Carlos da Silva Delfino",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
   },
