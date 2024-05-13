@@ -62,7 +62,7 @@ Sprint inicial
 
 [ - ] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
 
-   [ - ] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
+   [ X ] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
         **tipos de quartos:**
         
                 Quarto Queen: um quarto de hotel com uma cama de casal, sendo a cama de tamanho padrão.
