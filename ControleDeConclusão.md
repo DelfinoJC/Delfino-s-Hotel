@@ -60,16 +60,18 @@ Sprint inicial
 
 ## Sprint 02 (De 10 a 16/05)
 
-[ - ] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
+[ X ] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
 
    [ X ] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
         **tipos de quartos:**
-        
+
                 Quarto Queen: um quarto de hotel com uma cama de casal, sendo a cama de tamanho padrão.
                 Quarto King: um quarto de hotel com uma cama de tamanho king-size.
                 Quarto Twin: um quarto que contém duas camas de solteiro, mas apenas um hóspede ocupa.
 
-   [ ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+   [ X ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+   [ X ] - Não criar um quarto se o número já existir
+   [ X ] - Campo de foto opcional
 
 [ ] 5. **Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)**
 
