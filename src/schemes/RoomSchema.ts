@@ -3,10 +3,10 @@ import { TypedRequest } from "../utils/typedRequest";
 import { IRoom } from "../entities/IRoom";
 
 export const roomSchemaValidate = yup.object<IRoom>({
-  numberOfRoom: yup.number().required(),
+  numberOfRoom: yup.string().required(),
   type: yup.string().oneOf(["individual", "double", "suite"]).required(),
-  guestCapacity: yup.number().required(),
-  dailyRate: yup.number().required(),
+  guestCapacity: yup.string().required(),
+  dailyRate: yup.string().required(),
   photo: yup.string(),
   status: yup
     .string()
