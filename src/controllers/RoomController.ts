@@ -7,12 +7,17 @@ import { Request, Response } from 'express'
 const repository = new RoomRepository(RoomModel)
 const service = new RoomService(repository)
 
-export async function createRoom(req: Request, res: Response){
-    try {
-        const newRoom = await service.createRoom( req.body)
-        res.status(StatusCode.CREATE).json({ newRoom})    
+export async function createRoom(req: Request, res: Response) {
+  const { file ,body } = req
+  console.log(body)
+  try {
+    const data = {
+      ...body,
+      photo: file?.filename
     }
-    catch (error) {
-        res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
-    }
+    const newRoom = await service.createRoom(data)
+    return res.status(StatusCode.CREATE).json({ newRoom })
+  } catch (error) {
+    return res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
+  }
 }
