@@ -17,4 +17,11 @@ export class RoomRepository {
     const createRoom = await this.database.create(data)
     return createRoom
   }
+
+  async updateStatus(room: string, newStatus: string) {
+    const update = await this.database
+      .findOneAndUpdate({ _id: room }, { status: newStatus }, { new: true })
+      .exec()
+    return update
+  }
 }
