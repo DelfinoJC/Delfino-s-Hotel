@@ -20,6 +20,7 @@ const roomSchema = new mongoose.Schema<IRoom>({
 
   photo: {
     type: String,
+    default: "undefined"
   },
 
   status: {
