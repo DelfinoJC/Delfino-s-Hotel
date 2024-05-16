@@ -73,10 +73,10 @@ Sprint inicial
    [ X ] - Não criar um quarto se o número já existir
    [ X ] - Campo de foto opcional
 
-[ ] 5. **Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)**
+[ X ] 5. **Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)**
 
-   [ ] - Rota para alterar o status do quarto entre: "disponível", "ocupado", "em manutenção"
-   [ ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+   [ X ] - Rota para alterar o status do quarto entre: "disponível", "ocupado", "em manutenção"
+   [ X ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
 
 [ ] 6. **Listar Todos os Quartos disponíveis**
 
