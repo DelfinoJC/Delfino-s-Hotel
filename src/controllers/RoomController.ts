@@ -33,3 +33,23 @@ export async function updateStatus(req: Request, res: Response) {
     return res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
   }
 }
+
+export async function findAllRooms(req: Request, res: Response){
+  try{
+    const allRooms = await service.findAllRooms()
+    return res.status(StatusCode.OK).json({ rooms: allRooms})
+  }
+  catch(error){
+    return res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
+  }
+}
+
+export async function findAllRoomsAvailable(req: Request, res: Response) {
+  try{
+    const allRooms = await service.findAllRoomsAvailable()
+    return res.status(StatusCode.OK).json({ rooms: allRooms })
+  }
+  catch(error){
+    return res.status(StatusCode.BAD_REQUEST).json({ message: error.message})
+  }
+}

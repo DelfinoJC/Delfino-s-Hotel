@@ -13,6 +13,11 @@ export class RoomRepository {
     return findRoomExist
   }
 
+  async findAllRooms(): Promise<IRoom[]>{
+    const allRooms = await this.database.find().exec()
+    return allRooms
+  }
+
   async create(data: IRoom): Promise<IRoom> {
     const createRoom = await this.database.create(data)
     return createRoom

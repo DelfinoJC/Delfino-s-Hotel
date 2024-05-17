@@ -1,5 +1,10 @@
 import { Router } from 'express'
-import { createRoom, updateStatus } from '../controllers/RoomController'
+import {
+  createRoom,
+  updateStatus,
+  findAllRooms,
+  findAllRoomsAvailable
+} from '../controllers/RoomController'
 import * as RoomSchema from '../schemes/RoomSchema'
 import authMiddleware from '../middleware/auth'
 import { storageMiddleware } from '../middleware/uploadFiles'
@@ -21,5 +26,9 @@ router.put(
   validateMiddleware(RoomSchema.UpdateStatusOfRoom.schema),
   updateStatus
 )
+
+router.get('/allRooms', findAllRooms)
+
+router.get('/roomsAvailable', findAllRoomsAvailable)
 
 export default router

@@ -26,4 +26,20 @@ export class RoomService {
 
     return changedStatus
   }
+
+  async findAllRooms(){
+    return this.repository.findAllRooms()
+  }
+
+  async findAllRoomsAvailable(){
+    const allRooms = await this.repository.findAllRooms()
+
+    const availableRooms = allRooms.map((room) => {
+      if(room.status === "available"){
+        return room
+      }
+    })
+
+    return availableRooms
+  }
 }
