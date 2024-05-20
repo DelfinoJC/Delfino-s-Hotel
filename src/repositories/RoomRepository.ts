@@ -13,9 +13,14 @@ export class RoomRepository {
     return findRoomExist
   }
 
-  async findAllRooms(): Promise<IRoom[]>{
+  async findAllRooms(): Promise<IRoom[]> {
     const allRooms = await this.database.find().exec()
     return allRooms
+  }
+
+  async findRoomById(id: string): Promise<IRoom | null>{
+    const findRoom = await this.database.findById(id)
+    return findRoom
   }
 
   async create(data: IRoom): Promise<IRoom> {
@@ -28,5 +33,10 @@ export class RoomRepository {
       .findOneAndUpdate({ _id: room }, { status: newStatus }, { new: true })
       .exec()
     return update
+  }
+
+  async findAllAvailableRooms(): Promise<IRoom[]> {
+    const allRooms = await this.database.find({ status: 'available' }).exec()
+    return allRooms
   }
 }
