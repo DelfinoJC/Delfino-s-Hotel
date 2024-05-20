@@ -14,6 +14,11 @@ export class GuestRepository {
     return guest;
   }
 
+  async findGuestById(id: string){
+    const guest = await this.database.findById(id)
+    return guest
+  }
+
   async findAllGuest() {
     const allUsers = await this.database.find();
     return allUsers;
