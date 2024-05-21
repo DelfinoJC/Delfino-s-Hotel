@@ -18,6 +18,11 @@ export class BookingService {
       (this.roomRepository = repoRoom)
   }
 
+  async findAllBookingsOfGuest(id: string) {
+    const bookings = await this.repository.findAllBookingsWithIdGuest(id)
+    return bookings
+  }
+
   async createBooking(data: IBooking) {
     const guest = await this.guestRepository.findGuestById(data.idOfGuest)
     if (!guest) {
@@ -60,8 +65,22 @@ export class BookingService {
     }
 
     const reserveCreated = await this.repository.createBooking(newBooking)
-    guest.bookings.push(reserveCreated);
-    await guest.save();
+    guest.bookings.push(reserveCreated)
+    await guest.save()
     return reserveCreated
+  }
+
+  async cancelReservation(id: string) {
+    const booking = await this.repository.findBookingById(id)
+    if (!booking) {
+      throw new Error('This reservation does not exist')
+    }
+
+    if (booking.status === 'in progress') {
+      throw new Error('It is not possible to cancel a reservation in progress')
+    }
+
+    const changedStatus = await this.repository.changeStatusToCanceled(id)
+    return changedStatus
   }
 }
