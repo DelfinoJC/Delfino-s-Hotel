@@ -29,6 +29,6 @@ router.put(
 
 router.get('/allRooms', findAllRooms)
 
-router.get('/roomsAvailable', findAllRoomsAvailable)
+router.get('/roomsAvailable', authMiddleware(false) , findAllRoomsAvailable)
 
 export default router
