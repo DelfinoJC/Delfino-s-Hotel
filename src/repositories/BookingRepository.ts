@@ -28,8 +28,8 @@ export class BookingRepository {
     return booking
   }
 
-  async findAllBookingsWithIdGuest(id: string): Promise<IBooking[]> {
-    const allBookings = await this.database.find({ guests: id }).exec()
+  async findBookingsOfTheGuest(id: string): Promise<IBooking[]> {
+    const allBookings = await this.database.find({ idOfGuest: id }).exec()
     return allBookings
   }
 
