@@ -59,6 +59,15 @@ export class GuestService {
 
     return { token: tokenCreated };
   }
+  
+  async findAllBookingsOfGuest(id: string) {
+    const bookings = await this.repository.findAllBookingsWithIdGuest(id)
+    if (!bookings) {
+      throw new Error(`Guest dont found`)
+    }
+
+    return bookings
+  }
 
   async findAllGuest() {
     return await this.repository.findAllGuest();
