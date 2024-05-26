@@ -18,11 +18,6 @@ export class BookingService {
       (this.roomRepository = repoRoom)
   }
 
-  async findAllBookingsOfGuest(id: string) {
-    const bookings = await this.repository.findAllBookingsWithIdGuest(id)
-    return bookings
-  }
-
   async createBooking(data: IBooking) {
     const guest = await this.guestRepository.findGuestById(data.idOfGuest)
     if (!guest) {
@@ -37,7 +32,7 @@ export class BookingService {
     const newBooking = {
       ...data,
       checkInDate: new Date(data.checkInDate),
-      checkoutDate: new Date(data.checkOutDate),
+      checkoutDate: new Date(data.checkOutDate)
     }
 
     // VERIFY SE JÁ EXISTED RESERVE NOS DIAS REQUERIDOS NO QUARTO DESEJADO

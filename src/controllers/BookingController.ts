@@ -27,17 +27,6 @@ export async function createBooking(req: Request, res: Response) {
   }
 }
 
-export async function findAllBookingsOfGuest(req: Request, res: Response) {
-  const { id } = req.params
-
-  try {
-    const allBookingsOfTheGuest = await service.findAllBookingsOfGuest(id)
-    return res.status(StatusCode.OK).json({ allBookingsOfTheGuest })
-  } catch (error) {
-    return res.status(StatusCode.BAD_REQUEST).json({ message: error.message })
-  }
-}
-
 export async function deleteBooking(req: Request, res: Response) {
   const { id } = req.params
 
