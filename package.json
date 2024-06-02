@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsnd --respawn src/app.ts",
     "build":"tsup src",
-    "start": "node dist/index.js",
+    "start": "node dist/app.js",
     "seed:admin": "tsnd src/seeds/admin.ts"
   },
   "keywords": [],
