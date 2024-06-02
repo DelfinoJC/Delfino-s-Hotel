@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 export interface IRoom {
     _id: mongoose.Types.ObjectId
     numberOfRoom: number,
-    type: "queen" | "king" | "twin" | "deluxe" | "executive" | "presidential",
+    type: "individual" | "double" | "suite",
     guestCapacity: number,
     dailyRate: number,
     photo: string,
