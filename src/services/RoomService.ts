@@ -17,4 +17,22 @@ export class RoomService {
     const create = await this.repository.create(data)
     return create
   }
+
+  async updateStatusOfRoom(room: string, newStatus: string) {
+    const changedStatus = await this.repository.updateStatus(room, newStatus)
+    if (!changedStatus) {
+      throw new Error(`This room doesn't exist`)
+    }
+
+    return changedStatus
+  }
+
+  async findAllRooms() {
+    return this.repository.findAllRooms()
+  }
+
+  async findAllRoomsAvailable() {
+    const allRooms = await this.repository.findAllAvailableRooms()
+    return allRooms
+  }
 }

@@ -44,48 +44,54 @@ Sprint inicial
         [ X ] - Receber os campos necessários para criar um usuário
                 [ X ] - Usar middleware para validação de requisição;
                 [ X ] - Usar Schema de validação usando yup
-        [ X ] - Verficar se já existe um usuário com o mesmo email
-        [ X ] - Criptografar a senha (Provider de criptografia)
+        [X] - Verficar se já existe um usuário com o mesmo email
+        [X] - Criptografar a senha (Provider de criptografia)
 
- [ X ] 2. Login do Hóspede - POST /guests/auth
+ [X] 2. Login do Hóspede - POST /guests/auth
          [ X ] - Comparar senhas criptografada com senha da requisição
          [ X ] - Utilizar JWT (Provider de Token)
          [ X ] - Como diferenciar um token de hóspede de um token de gerente? 🤔
 
- [ X ] 3. **Login de Gerente - POST /admin/auth**
-         [ X ] Cadastrar um gerente no banco de dados
-         [ X ] Vale a pena ter dois middleware diferentes pra algo tão parecido??? não. 🤔
+ [X] 3. **Login de Gerente - POST /admin/auth**
+         [X] Cadastrar um gerente no banco de dados
+         [X] Vale a pena ter dois middleware diferentes pra algo tão parecido??? não. 🤔
 
 ```
 
 ## Sprint 02 (De 10 a 16/05)
 
-[ X ] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
+[X] 4. **Cadastro de Quarto (ROTA PRIVADA - ADMIN)**
 
-   [ X ] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
-        **tipos de quartos:**
+[X] - Informações necessárias: number, type, gest_capacity, daily_rate e photo. O status inicial é sempre disponível.
+**tipos de quartos:**
 
                 Quarto Queen: um quarto de hotel com uma cama de casal, sendo a cama de tamanho padrão.
                 Quarto King: um quarto de hotel com uma cama de tamanho king-size.
                 Quarto Twin: um quarto que contém duas camas de solteiro, mas apenas um hóspede ocupa.
 
-   [ X ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
-   [ X ] - Não criar um quarto se o número já existir
-   [ X ] - Campo de foto opcional
+[X] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+[X] - Não criar um quarto se o número já existir
+[X] - Campo de foto opcional
 
-[ ] 5. **Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)**
+[X] 5. Alterar Status Quarto (Check in, checkout e manutenção) (ROTA PRIVADA - ADMIN)
 
-   [ ] - Rota para alterar o status do quarto entre: "disponível", "ocupado", "em manutenção"
-   [ ] - Não permitir o envio se o usuário que está executando a ação não for um administrador
+[X] - Rota para alterar o status do quarto entre: "disponível", "ocupado", "em manutenção"
+[X] - Não permitir o envio se o usuário que está executando a ação não for um administrador
 
-[ ] 6. **Listar Todos os Quartos disponíveis**
+[X] 6. Listar Todos os Quartos disponíveis
 
-   [ ] - Deve listar os quartos com status "disponível"
+[X] - Deve listar os quartos com status "disponível"
 
-[ ] 7. **Listar Todos os Quartos disponíveis por data**
-   [ ] - Deve listar os quartos com status "disponível".
-   [ ] - Deve listar apenas os quartos que não possuirem reserva "confirmada" ou "em andamento" na data especificada.
+[ ] 7. (OPCIONAL) Listar Todos os Quartos disponíveis por data
 
+[ ] - Deve listar os quartos com status "disponível".
+[ ] - Deve listar apenas os quartos que não possuirem reserva "confirmada" ou "em andamento" na data especificada.
+
+[X] 8. Reservar quarto (ROTA PRIVADA)
+
+[X] 9. (OPCIONAL) Listar todas as reservas para o hóspede (ROTA PRIVADA)
+
+[X] 10. Cancelar reserva (ROTA PRIVADA)
 
 # OBSERVAÇÕES DA PRIMEIRA SEMANA
 

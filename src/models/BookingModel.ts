@@ -7,12 +7,17 @@ const bookingSchema = new mongoose.Schema<IBooking>({
     required: true,
   },
 
-  checkoutDate: {
+  checkOutDate: {
     type: Date,
     required: true,
   },
 
-  gests: {
+  createdAt: {
+    type: Date,
+    default: new Date()
+  },
+
+  guests: {
     type: Number,
     required: true,
   },
