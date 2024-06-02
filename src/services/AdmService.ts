@@ -1,7 +1,7 @@
-import { IAdm, IAdmTOKEN } from "../entities/IAdm";
 import { Token } from "../provider/createToken";
 import { Crypto } from "../provider/cryptograph";
 import { authAdm } from "../configs/authAdmConfig";
+import { IAdm, IAdmTOKEN } from "../entities/IAdm";
 import { AdminRepository } from "../repositories/AdmRepository";
 
 const crypto = new Crypto();

@@ -4,8 +4,6 @@ import { type NextFunction, type Request, type Response } from "express";
 export default (schema: any) =>
   async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      console.log(`REQUEST BODY: ${JSON.stringify(req.body, null, 2)}`)
-      console.log(`REQUEST file: ${JSON.stringify(req.file, null, 2)}`)
       await schema.validate(
         {
           body: req.body,
@@ -15,7 +13,6 @@ export default (schema: any) =>
         },
         { strict: true, abortEarly: false }
       );
-      console.log(`REQUEST: ${schema}`);
 
       next();
     } catch (error) {

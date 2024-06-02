@@ -1,9 +1,7 @@
-import { mongoose } from '../database/connectionDatabase'
 import { Model } from 'mongoose'
-import { IBooking } from '../entities/IBookings'
 import { BookingModel } from '../models/BookingModel'
 import { BookingRepository } from '../repositories/BookingRepository'
-import { IGuest, IGuestDTO, IGuestWithBookings } from '../entities/IGuest'
+import { IGuest, IGuestDTO } from '../entities/IGuest'
 
 export class GuestRepository {
   private database: Model<IGuest>

@@ -1,5 +1,4 @@
 import {
-  IGuest,
   IGuestDTO,
   IGuestLogin,
   IGuestTOKEN,
