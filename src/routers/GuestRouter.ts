@@ -25,6 +25,6 @@ router.get(
   findAllBookingsOfGuest
 )
 
-router.get("/", findAllGuest);
+router.get("/", auth(true), findAllGuest);
 
 export default router;

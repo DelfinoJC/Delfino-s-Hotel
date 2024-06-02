@@ -27,7 +27,7 @@ router.put(
   updateStatus
 )
 
-router.get('/allRooms', findAllRooms)
+router.get('/allRooms', authMiddleware(true), findAllRooms)
 
 router.get('/roomsAvailable', authMiddleware(false) , findAllRoomsAvailable)
 
