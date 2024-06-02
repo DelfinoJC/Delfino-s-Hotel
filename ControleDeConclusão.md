@@ -84,17 +84,11 @@ Sprint inicial
 
 [ ] 7. (OPCIONAL) Listar Todos os Quartos disponíveis por data
 
-[ ] - Deve listar os quartos com status "disponível".
-[ ] - Deve listar apenas os quartos que não possuirem reserva "confirmada" ou "em andamento" na data especificada.
+        [ ] - Deve listar os quartos com status "disponível".
+        [ ] - Deve listar apenas os quartos que não possuirem reserva "confirmada" ou "em andamento" na data especificada.
 
 [X] 8. Reservar quarto (ROTA PRIVADA)
 
 [X] 9. (OPCIONAL) Listar todas as reservas para o hóspede (ROTA PRIVADA)
 
 [X] 10. Cancelar reserva (ROTA PRIVADA)
-
-# OBSERVAÇÕES DA PRIMEIRA SEMANA
-
-2. Citar o que faltou para completar itens iniciados - Testar se está funcionando
-
-3. Entender os itens que não foram iniciados - Estava ajudando os colegas a pelo menos iniciar o projeto; - Talvez um pouco organização
